@@ -12,10 +12,15 @@
 
   <ItemGroup>
     <Folder Include="Helpers\" />
+    <Folder Include="ItemViewModels\" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\SelectCountry.xaml">
+    <ProjectReference Include="..\..\ProjectCountries.Common\ProjectCountries.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\CountriesList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
