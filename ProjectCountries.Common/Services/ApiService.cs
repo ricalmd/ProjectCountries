@@ -22,7 +22,7 @@ namespace ProjectCountries.Common.Services
         /// <param name="url"></param>
         /// <param name="controller"></param>
         /// <returns>Response</returns>
-        public async Task<Response> GetCountries(string url, string controller)
+        public async Task<Response> GetCountriesAsync<T>(string url, string controller)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace ProjectCountries.Common.Services
                         Message = result
                     };
                 }
-                var countries = JsonConvert.DeserializeObject<List<Country>>(result);
+                List<T> countries = JsonConvert.DeserializeObject<List<T>>(result);
 
                 return new Response
                 {

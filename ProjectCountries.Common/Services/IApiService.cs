@@ -5,6 +5,6 @@ namespace ProjectCountries.Common.Services
 {
     public interface IApiService
     {
-        Task<Response> GetCountries(string url, string controller);
+        Task<Response> GetCountriesAsync<T>(string url, string controller);
     }
 }

@@ -1,10 +1,7 @@
 ﻿using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
 using ProjectCountries.Common.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using ProjectCountries.Prism.Views;
 
 namespace ProjectCountries.Prism.ItemViewModels
 {
@@ -28,7 +25,7 @@ namespace ProjectCountries.Prism.ItemViewModels
                 { "country", this }
             };
 
-            //await _navigation.NavigateAsync(CountryDetailPage), parameters);
+            await _navigation.NavigateAsync(nameof(CountryDetail), parameters);
         }
     }
 }
