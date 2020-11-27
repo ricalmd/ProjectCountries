@@ -4,7 +4,8 @@
                 xmlns:prism="http://prismlibrary.com"
                 prism:ViewModelLocator.AutowireViewModel="True"
                 x:Class="ProjectCountries.Prism.Views.CountriesList"
-                xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms">
+                xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                Title="{Binding Title}">
     <AbsoluteLayout>
         <StackLayout>
             <SearchBar SearchCommand="{Binding SearchCommand}"
@@ -21,6 +22,9 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SelectCountryCommand}"/>
+                            </Grid.GestureRecognizers>
                             <ffSvg:SvgCachedImage Grid.Column="0"
                                                     Aspect="Fill"
                                                     Source="{Binding Flag}" 

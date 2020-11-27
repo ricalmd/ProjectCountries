@@ -21,14 +21,18 @@ namespace ProjectCountries.Prism
             InitializeComponent();
 
             await NavigationService.NavigateAsync($"NavigationPage/{nameof(CountriesList)}");
+
+            Device.SetFlags(new string[] { "Shapes_Experimental" });
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
             containerRegistry.Register<IApiService, ApiService>();
+            containerRegistry.Register<IVerifyEmptyService, VerifyEmptyService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<CountryDetail, CountryDetailViewModel>();
             containerRegistry.RegisterForNavigation<CountriesList, CountriesListViewModel>();
         }
     }

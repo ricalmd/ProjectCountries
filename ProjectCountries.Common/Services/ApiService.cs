@@ -41,7 +41,12 @@ namespace ProjectCountries.Common.Services
                         Message = result
                     };
                 }
-                List<T> countries = JsonConvert.DeserializeObject<List<T>>(result);
+                var jsonSettings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore
+                };
+
+                List<T> countries = JsonConvert.DeserializeObject<List<T>>(result, jsonSettings);
 
                 return new Response
                 {
