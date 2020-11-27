@@ -79,13 +79,7 @@
                            TextColor="#3C371B"
                            Text="{Binding Country.Area}"/>
 
-                    <!--<Path Fill="Blue" Stroke="Red" StrokeThickness="1">
-                        <Path.Data>
-                            <EllipseGeometry Center="50,50"
-                                RadiusX="50"
-                                RadiusY="50" />
-                        </Path.Data>
-                    </Path>-->
+                    
 
                     <Label Grid.Row="4"
                            Grid.Column="0"

@@ -4,11 +4,12 @@
                 xmlns:prism="http://prismlibrary.com"
                 prism:ViewModelLocator.AutowireViewModel="True"
                 x:Class="ProjectCountries.Prism.Views.CountriesList"
+                BackgroundImageSource="map.jpg"
                 xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
                 Title="{Binding Title}">
     <AbsoluteLayout>
         <StackLayout>
-            <SearchBar SearchCommand="{Binding SearchCommand}"
+            <SearchBar BackgroundColor="WhiteSmoke" SearchCommand="{Binding SearchCommand}"
                 Text="{Binding Search}"/>
             <CollectionView ItemsSource="{Binding Countries}">
                 <CollectionView.ItemsLayout>
@@ -38,7 +39,8 @@
                                      VerticalOptions="Center">
                                 <Label Text="{Binding Name}" 
                                    FontAttributes="Bold"
-                                   FontSize="Medium"
+                                   FontSize="Large"
+                                   TextColor="Orange"
                                    LineBreakMode="TailTruncation" />
                             </StackLayout>
                             <Image Grid.Column="2" 
